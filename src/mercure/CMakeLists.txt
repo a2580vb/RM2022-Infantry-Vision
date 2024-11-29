@@ -1,4 +1,4 @@
-Cmake_minimum_required (VERSION 3.5)
+Cmake_minimum_required (VERSION 3.10)
 
 
 project(mercure_driver)

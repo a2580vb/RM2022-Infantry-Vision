@@ -10,6 +10,7 @@
 #include "CanSerial.h"
 #include "Rune/RuneDetector.h"
 #include "Rune/Fitting.h"
+#include <cstring>
 #include <thread>
 #include <mutex>
 #include <condition_variable>

@@ -15,6 +15,8 @@ date   :  2019.05.29
 #include <opencv2/opencv.hpp>
 #include <chrono>
 #include "Mat_time.h"
+#include <cstring>
+#include <iostream>
 
 namespace camera{
 

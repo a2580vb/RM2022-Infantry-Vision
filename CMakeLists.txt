@@ -1,4 +1,4 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
 PROJECT(InfantryAutoaim)
 
 
@@ -24,9 +24,13 @@ INCLUDE_DIRECTORIES(
 	"include/Serial"
 	"include/Solver"
 	"include/Rune"
+	"/usr/local/include/eigen3"
 	${OPENCV_INCLUDE_DIRECTORIES}
 	${Eigen_INCLUDE_DIRECTORIES}
 )
+LINK_DIRECTORIES(
+	"/home/li/RM2022-Infantry-Vision/src/mercure/"
+	)
 add_subdirectory(
 	${CMAKE_CURRENT_SOURCE_DIR}/src/mercure
 )

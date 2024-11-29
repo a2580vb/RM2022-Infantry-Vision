@@ -1,5 +1,4 @@
 #include "ImageProgress.h"
-#include <thread>
 
 int main()
 {    

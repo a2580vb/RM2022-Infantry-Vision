@@ -6,7 +6,7 @@
 #include "classfier.h"
 #include <cstdio>
 #include <iostream>
-
+int tempx = 0;
 vector<vector<MatrixXd>> Classifier::load_conv_w(const string &file)
 {
     vector<vector<MatrixXd>> result;
@@ -24,7 +24,8 @@ vector<vector<MatrixXd>> Classifier::load_conv_w(const string &file)
         return result;
     }
     int channel_in, channel_out, row, col;
-    fscanf(fp, "%d %d %d %d", &channel_in, &channel_out, &row, &col);
+    
+    tempx = fscanf(fp, "%d %d %d %d", &channel_in, &channel_out, &row, &col);
     for (int o = 0; o < channel_in; o++)
     {
         vector<MatrixXd> sub;
@@ -35,7 +36,7 @@ vector<vector<MatrixXd>> Classifier::load_conv_w(const string &file)
             {
                 for (int c = 0; c < col; c++)
                 {
-                    fscanf(fp, "%lf", &f(r, c));
+                    tempx = fscanf(fp, "%lf", &f(r, c));
                 }
             }
             sub.emplace_back(f);
@@ -61,11 +62,11 @@ vector<double> Classifier::load_conv_b(const string &file)
         return result;
     }
     int len;
-    fscanf(fp, "%d", &len);
+    tempx = fscanf(fp, "%d", &len);
     for (int i = 0; i < len; i++)
     {
         double v;
-        fscanf(fp, "%lf", &v);
+        tempx = fscanf(fp, "%lf", &v);
         result.emplace_back(v);
     }
     return result;
@@ -83,14 +84,14 @@ MatrixXd Classifier::load_fc_w(const string &file)
     int row, col;
 
 
-    fscanf(fp, "%d %d", &row, &col);
+    tempx = fscanf(fp, "%d %d", &row, &col);
     MatrixXd mat(row, col);
 
     for (int r = 0; r < row; r++)
     {
         for (int c = 0; c < col; c++)
         {
-            fscanf(fp, "%lf", &mat(r, c));
+            tempx = fscanf(fp, "%lf", &mat(r, c));
         }
     }
 
@@ -108,11 +109,11 @@ VectorXd Classifier::load_fc_b(const string &file)
         return VectorXd::Zero(1, 1);
     }
     int row;
-    fscanf(fp, "%d", &row);
+    tempx = fscanf(fp, "%d", &row);
     VectorXd vec(row, 1);
     for (int r = 0; r < row; r++)
     {
-        fscanf(fp, "%lf", &vec(r));
+        tempx = fscanf(fp, "%lf", &vec(r));
     }
     return vec;
 }
