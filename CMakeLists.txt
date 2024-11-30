@@ -24,12 +24,15 @@ INCLUDE_DIRECTORIES(
 	"include/Serial"
 	"include/Solver"
 	"include/Rune"
+	"include/Camera"
 	"/usr/local/include/eigen3"
 	${OPENCV_INCLUDE_DIRECTORIES}
 	${Eigen_INCLUDE_DIRECTORIES}
+	"include/Camera"
 )
 LINK_DIRECTORIES(
 	"/home/li/RM2022-Infantry-Vision/src/mercure/"
+	"/home/li/RM2022-Infantry-Vision/src/Camera/"
 	)
 add_subdirectory(
 	${CMAKE_CURRENT_SOURCE_DIR}/src/mercure
@@ -37,4 +40,4 @@ add_subdirectory(
 FILE(GLOB_RECURSE sourcefiles "src/*.cpp")
 
 ADD_EXECUTABLE(Autoaim  ${sourcefiles})
-TARGET_LINK_LIBRARIES(Autoaim  mercure_driver  ${OpenCV_LIBS})
+TARGET_LINK_LIBRARIES(Autoaim  mercure_driver  ${OpenCV_LIBS} MVSDK)

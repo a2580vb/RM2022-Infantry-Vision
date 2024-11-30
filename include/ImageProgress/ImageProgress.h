@@ -14,6 +14,7 @@
 #include <thread>
 #include <mutex>
 #include <condition_variable>
+#include "Camera.h"
 
 #define GYRO_BUFFER_NUM     15
 #define FRAME_BUFFER_NUM    6
